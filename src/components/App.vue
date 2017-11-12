@@ -1,6 +1,25 @@
 <template>
-<div class="blx">
-    <h2 class="title"> App </h2>
+<div class="box">
+    <h2 class="title"> App : {{ movieId}} </h2>
+    <movie  @chooseMovie="handleChooseMovie" :movieId="movieId"/>
 </div>
-  
 </template>
+
+<script>
+import Movie from 'Components/Movie.vue'
+
+export default {
+    components : { Movie },
+    data(){
+        return{
+            movieId:''
+        }
+    },
+    methods:{
+        handleChooseMovie(movieId){
+            console.log('ok');
+            this.movieId = movieId;
+        }
+    }
+}
+</script>
